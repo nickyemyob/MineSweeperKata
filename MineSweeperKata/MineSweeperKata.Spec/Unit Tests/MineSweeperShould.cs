@@ -17,6 +17,19 @@ namespace MineSweeperKata.Spec.Unit_Tests
                 "Field #1:\n" +
                 "11\n" +
                 "1*\n"
+            },
+            new object[]
+            {
+                "33\n" +
+                "...\n" +
+                "...\n" +
+                "..*\n" +
+                "00\n",
+
+                "Field #1:\n" +
+                "000\n" +
+                "011\n" +
+                "01*\n"
             }
         };
 
