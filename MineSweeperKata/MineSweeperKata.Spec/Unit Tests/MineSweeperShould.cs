@@ -5,17 +5,28 @@ namespace MineSweeperKata.Spec.Unit_Tests
     [TestFixture]
     public class MineSweeperShould
     {
-        [Test]
-        public void RevealMineAndDetectNearbyMines()
+        private static readonly object[] FieldObjects =
         {
-            var field = "22\n" +
-                        "..\n" +
-                        ".*\n" +
-                        "00\n";
+            new object[]
+            {
+                "22\n" +
+                "..\n" +
+                ".*\n" +
+                "00\n",
 
-            var expected = "Field #1:\n" +
-                         "11\n" +
-                         "1*\n";
+                "Field #1:\n" +
+                "11\n" +
+                "1*\n"
+            }
+        };
+
+        [TestCaseSource(nameof(FieldObjects))]
+        [Test]
+        public void RevealMineAndDetectNearbyMines(string inputField, string expectedField)
+        {
+            var field = inputField;
+
+            var expected = expectedField;
 
             var metalDetector = new MetalDetector();
 
