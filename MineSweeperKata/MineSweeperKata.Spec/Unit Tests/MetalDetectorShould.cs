@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace MineSweeperKata.Spec.Unit_Tests
 {
     [TestFixture]
-    public class MineSweeperShould
+    public class MetalDetectorShould
     {
         private static readonly object[] FieldAndSweepedFieldObjects =
         {

@@ -65,7 +65,7 @@
       <DependentUpon>ShowMines.feature</DependentUpon>
     </Compile>
     <Compile Include="ShowMinesSteps.cs" />
-    <Compile Include="Unit Tests\MineSweeperShould.cs" />
+    <Compile Include="Unit Tests\MetalDetectorShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
