@@ -8,7 +8,7 @@
             Mine = '*';
         }
 
-        public static char Empty { get; set; }
+        public char Empty { get; set; }
         public static char Mine { get; set; }
     }
 }

@@ -38,17 +38,29 @@ namespace MineSweeperKata.Spec.Unit_Tests
         {
             new object[]
             {
-                new List<IEnumerable<char>>
+                new List<List<char>>
                 {
-                    new List<char> {FieldSpace.Empty, FieldSpace.Empty},
-                    new List<char> {FieldSpace.Empty, FieldSpace.Mine}
+                    new List<char> {'.', '.'},
+                    new List<char> { '.', '*'}
                 },
                 new List<MineCoordinate>
                 {
                     new MineCoordinate(1, 1)
                 }
-
-    }
+            },
+            new object[]
+            {
+                new List<IEnumerable<char>>
+                {
+                    new List<char> {'.', '.', '.'},
+                    new List<char> {'.', '.', '.'},
+                    new List<char> {'.', '.', '*'}
+                },
+                new List<MineCoordinate>
+                {
+                    new MineCoordinate(2, 2)
+                }
+            }
         };
 
         [TestCaseSource(nameof(MapObjects))]

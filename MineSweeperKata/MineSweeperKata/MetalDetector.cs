@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MineSweeperKata
 {
     public class MetalDetector
     {
+        private const char Mine = '*';
+
         public string Sweep(string field)
         {
             return "Field #1:\n" +
@@ -14,11 +17,28 @@ namespace MineSweeperKata
 
         public IEnumerable GetMineLocations(IEnumerable<IEnumerable<char>> map)
         {
-            var mineCoordinates = new MineCoordinate(1, 1);
-            return new List<MineCoordinate>
-           {
-               mineCoordinates
-           };
+            var x = 0;
+            var y = 0;
+
+            var mineCoordinates = new List<MineCoordinate>();
+
+            foreach (var yMap in map)
+            {
+                foreach (var xMap in yMap)
+                {
+                    if (xMap == Mine)
+                    {
+                        mineCoordinates.Add(new MineCoordinate(x, y));
+                    }
+
+                    x++;
+                }
+                x = 0;
+                y++;
+
+            }
+
+            return mineCoordinates;
         }
     }
 }

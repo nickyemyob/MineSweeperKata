@@ -2,19 +2,19 @@
 {
     public class MineCoordinate
     {
-        private int V1 { get; }
-        private int V2 { get; }
+        private int X { get; }
+        private int Y { get; }
 
-        public MineCoordinate(int v1, int v2)
+        public MineCoordinate(int x, int y)
         {
-            V1 = v1;
-            V2 = v2;
+            X = x;
+            Y = y;
         }
 
         public override bool Equals(object obj)
         {
-            return V1 == (obj as MineCoordinate).V1 &&
-                   V2 == (obj as MineCoordinate).V2;
+            return X == (obj as MineCoordinate).X &&
+                   Y == (obj as MineCoordinate).Y;
         }
 
 
@@ -22,7 +22,7 @@
         {
             unchecked
             {
-                return (V1 * 397) ^ V2;
+                return (X * 397) ^ Y;
             }
         }
     }
