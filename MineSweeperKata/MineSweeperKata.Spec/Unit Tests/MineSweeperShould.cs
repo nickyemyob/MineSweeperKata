@@ -34,6 +34,34 @@ namespace MineSweeperKata.Spec.Unit_Tests
             }
         };
 
+        private static readonly object[] MapObjects =
+        {
+            new object[]
+            {
+                new List<IEnumerable<char>>
+                {
+                    new List<char> {FieldSpace.Empty, FieldSpace.Empty},
+                    new List<char> {FieldSpace.Empty, FieldSpace.Mine}
+                },
+                new List<MineCoordinate>
+                {
+                    new MineCoordinate(1, 1)
+                }
+
+    }
+        };
+
+        [TestCaseSource(nameof(MapObjects))]
+        [Test]
+        public void GetMineLocations(IEnumerable<IEnumerable<char>> map, IList<MineCoordinate> expectCoordinates)
+        {
+            var metalDetector = new MetalDetector();
+
+            var actualCoordinates = metalDetector.GetMineLocations(map);
+
+            Assert.That(actualCoordinates, Is.EquivalentTo(expectCoordinates));
+        }
+
         [TestCaseSource(nameof(FieldAndSweepedFieldObjects))]
         [Ignore("top test")]
         [Test]
@@ -49,30 +77,5 @@ namespace MineSweeperKata.Spec.Unit_Tests
 
             Assert.AreEqual(expected, actual);
         }
-
-        [Test]
-        public void GetMineLocations()
-        {
-            IEnumerable<IEnumerable<char>> map = new List<IEnumerable<char>>
-            {
-                new List<char> {FieldSpace.Empty, FieldSpace.Empty},
-                new List<char> {FieldSpace.Empty, FieldSpace.Mine}
-            };
-
-            var mineCoordinates = new MineCoordinate(1, 1);
-
-            IList<MineCoordinate> expectCoordinates = new List<MineCoordinate>
-            {
-                mineCoordinates
-            };
-
-            var metalDetector = new MetalDetector();
-
-            var actualCoordinates = metalDetector.GetMineLocations(map);
-
-            Assert.That(actualCoordinates, Is.EquivalentTo(expectCoordinates));
-        }
-
-
     }
 }
