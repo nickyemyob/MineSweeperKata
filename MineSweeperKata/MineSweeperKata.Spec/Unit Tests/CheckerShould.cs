@@ -1,34 +1,53 @@
-﻿using System.Collections.Generic;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace MineSweeperKata.Spec.Unit_Tests
 {
     [TestFixture]
     public class CheckerShould
     {
-        private static readonly object[] FieldObjects =
+        private static readonly object[] MinesAtEdgeOfFieldScenarios =
         {
             new object[]
             {
-                new List<string>
-                {
-                    "..",
-                    ".*"
-                }
+                new MineCoordinate(1, 1),
+                2,
+                2
             }
         };
 
-        [TestCaseSource(nameof(FieldObjects))]
+        [TestCaseSource(nameof(MinesAtEdgeOfFieldScenarios))]
         [Test]
-        public void ReturnTrueIfMineIsNextToTheRightEdgeOfTheBoard(IEnumerable<IEnumerable<char>> inputField)
+        public void ReturnTrueIfMineIsNextToTheRightEdgeOfTheBoard(MineCoordinate inputtedMineLocation, int fieldWidth, int fieldHeight)
         {
-            var field = inputField;
+            var mineLocation = inputtedMineLocation;
             var checker = new Checker();
 
-            var isAtEdge = checker.IsAtEdge(field);
+            var isAtEdge = checker.IsAtRightEdge(mineLocation, fieldWidth, fieldHeight);
 
             Assert.True(isAtEdge);
 
+        }
+
+        private static readonly object[] MinesNotAtEdgeOfFieldScenarios =
+        {
+            new object[]
+            {
+                new MineCoordinate(1, 1),
+                3,
+                3
+            }
+        };
+
+        [TestCaseSource(nameof(MinesNotAtEdgeOfFieldScenarios))]
+        [Test]
+        public void ReturnFalseIfMineIsNotNextToTheRightEdgeOfTheBoard(MineCoordinate inputtedMineLocation, int fieldWidth, int fieldHeight)
+        {
+            var mineLocation = inputtedMineLocation;
+            var checker = new Checker();
+
+            var isAtEdge = checker.IsAtRightEdge(mineLocation, fieldWidth, fieldHeight);
+
+            Assert.False(isAtEdge);
 
         }
 

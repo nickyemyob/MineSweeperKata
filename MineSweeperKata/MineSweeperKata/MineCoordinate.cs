@@ -2,8 +2,8 @@
 {
     public class MineCoordinate
     {
-        private int X { get; }
-        private int Y { get; }
+        public int X { get; }
+        public int Y { get; }
 
         public MineCoordinate(int x, int y)
         {

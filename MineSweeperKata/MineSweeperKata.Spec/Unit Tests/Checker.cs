@@ -1,16 +1,10 @@
-﻿using System.Collections.Generic;
-
-namespace MineSweeperKata.Spec.Unit_Tests
+﻿namespace MineSweeperKata.Spec.Unit_Tests
 {
-    internal class Checker
+    public class Checker
     {
-        public Checker()
+        public bool IsAtRightEdge(MineCoordinate mineLocation, int fieldWidth, int fieldHeight)
         {
-        }
-
-        public bool IsAtEdge(IEnumerable<IEnumerable<char>> field)
-        {
-            return true;
+            return mineLocation.X == fieldWidth - 1;
         }
     }
 }
