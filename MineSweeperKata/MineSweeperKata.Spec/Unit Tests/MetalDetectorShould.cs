@@ -34,14 +34,30 @@ namespace MineSweeperKata.Spec.Unit_Tests
             }
         };
 
+        [TestCaseSource(nameof(FieldAndSweepedFieldObjects))]
+        [Ignore("top test")]
+        [Test]
+        public void RevealMineAndDetectNearbyMines(string inputField, string expectedField)
+        {
+            var field = inputField;
+
+            var expected = expectedField;
+
+            var metalDetector = new MetalDetector();
+
+            var actual = metalDetector.Sweep(field);
+
+            Assert.AreEqual(expected, actual);
+        }
+
         private static readonly object[] MapObjects =
         {
             new object[]
             {
-                new List<List<char>>
+                new List<string>
                 {
-                    new List<char> {'.', '.'},
-                    new List<char> { '.', '*'}
+                    "..",
+                    ".*"
                 },
                 new List<MineCoordinate>
                 {
@@ -50,11 +66,11 @@ namespace MineSweeperKata.Spec.Unit_Tests
             },
             new object[]
             {
-                new List<IEnumerable<char>>
+                new List<string>
                 {
-                    new List<char> {'.', '.', '.'},
-                    new List<char> {'.', '.', '.'},
-                    new List<char> {'.', '.', '*'}
+                    "...",
+                    "...",
+                    "..*"
                 },
                 new List<MineCoordinate>
                 {
@@ -72,22 +88,6 @@ namespace MineSweeperKata.Spec.Unit_Tests
             var actualCoordinates = metalDetector.GetMineLocations(map);
 
             Assert.That(actualCoordinates, Is.EquivalentTo(expectCoordinates));
-        }
-
-        [TestCaseSource(nameof(FieldAndSweepedFieldObjects))]
-        [Ignore("top test")]
-        [Test]
-        public void RevealMineAndDetectNearbyMines(string inputField, string expectedField)
-        {
-            var field = inputField;
-
-            var expected = expectedField;
-
-            var metalDetector = new MetalDetector();
-
-            var actual = metalDetector.Sweep(field);
-
-            Assert.AreEqual(expected, actual);
         }
     }
 }
