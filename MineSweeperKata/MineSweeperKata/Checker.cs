@@ -1,4 +1,4 @@
-﻿namespace MineSweeperKata.Spec.Unit_Tests
+﻿namespace MineSweeperKata
 {
     public class Checker
     {
