@@ -58,6 +58,36 @@ namespace MineSweeperKata.Spec.Unit_Tests
 
         }
 
+        private static readonly object[] MinesAtTopEdgeOfFieldScenarios =
+        {
+            new object[]
+            {
+                new MineCoordinate(0, 0),
+                2,
+                2
+            },
+
+            new object[]
+            {
+                new MineCoordinate(0, 1),
+                2,
+                2
+            }
+        };
+
+        [TestCaseSource(nameof(MinesAtTopEdgeOfFieldScenarios))]
+        [Test]
+        public void ReturnTrueIfMineIsNextToTheTopEdgeOfTheBoard(MineCoordinate inputtedMineLocation, int fieldWidth, int fieldHeight)
+        {
+            var mineLocation = inputtedMineLocation;
+            var checker = new Checker();
+
+            var isAtEdge = checker.IsAtTopEdge(mineLocation, fieldWidth, fieldHeight);
+
+            Assert.True(isAtEdge);
+
+        }
+
         private static readonly object[] MinesNotAtEdgeOfFieldScenarios =
         {
             new object[]
@@ -89,6 +119,19 @@ namespace MineSweeperKata.Spec.Unit_Tests
             var checker = new Checker();
 
             var isAtEdge = checker.IsAtLeftEdge(mineLocation, fieldWidth, fieldHeight);
+
+            Assert.False(isAtEdge);
+
+        }
+
+        [TestCaseSource(nameof(MinesNotAtEdgeOfFieldScenarios))]
+        [Test]
+        public void ReturnFalseIfMineIsNotNextToTheTopEdgeOfTheBoard(MineCoordinate inputtedMineLocation, int fieldWidth, int fieldHeight)
+        {
+            var mineLocation = inputtedMineLocation;
+            var checker = new Checker();
+
+            var isAtEdge = checker.IsAtTopEdge(mineLocation, fieldWidth, fieldHeight);
 
             Assert.False(isAtEdge);
 
