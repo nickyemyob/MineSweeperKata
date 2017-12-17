@@ -22,7 +22,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
             var mineLocation = inputtedMineLocation;
             var checker = new Checker();
 
-            var isAtEdge = checker.IsAtRightEdge(mineLocation, fieldWidth, fieldHeight);
+            var isAtEdge = checker.IsAtRightEdge(mineLocation, fieldWidth);
 
             Assert.True(isAtEdge);
 
@@ -52,7 +52,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
             var mineLocation = inputtedMineLocation;
             var checker = new Checker();
 
-            var isAtEdge = checker.IsAtLeftEdge(mineLocation, fieldWidth, fieldHeight);
+            var isAtEdge = checker.IsAtLeftEdge(mineLocation);
 
             Assert.True(isAtEdge);
 
@@ -82,7 +82,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
             var mineLocation = inputtedMineLocation;
             var checker = new Checker();
 
-            var isAtEdge = checker.IsAtTopEdge(mineLocation, fieldWidth, fieldHeight);
+            var isAtEdge = checker.IsAtTopEdge(mineLocation);
 
             Assert.True(isAtEdge);
 
@@ -112,7 +112,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
             var mineLocation = inputtedMineLocation;
             var checker = new Checker();
 
-            var isAtEdge = checker.IsAtBottomEdge(mineLocation, fieldWidth, fieldHeight);
+            var isAtEdge = checker.IsAtBottomEdge(mineLocation, fieldHeight);
 
             Assert.True(isAtEdge);
 
@@ -135,7 +135,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
             var mineLocation = inputtedMineLocation;
             var checker = new Checker();
 
-            var isAtEdge = checker.IsAtRightEdge(mineLocation, fieldWidth, fieldHeight);
+            var isAtEdge = checker.IsAtRightEdge(mineLocation, fieldWidth);
 
             Assert.False(isAtEdge);
 
@@ -148,7 +148,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
             var mineLocation = inputtedMineLocation;
             var checker = new Checker();
 
-            var isAtEdge = checker.IsAtLeftEdge(mineLocation, fieldWidth, fieldHeight);
+            var isAtEdge = checker.IsAtLeftEdge(mineLocation);
 
             Assert.False(isAtEdge);
 
@@ -161,7 +161,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
             var mineLocation = inputtedMineLocation;
             var checker = new Checker();
 
-            var isAtEdge = checker.IsAtTopEdge(mineLocation, fieldWidth, fieldHeight);
+            var isAtEdge = checker.IsAtTopEdge(mineLocation);
 
             Assert.False(isAtEdge);
 
@@ -174,7 +174,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
             var mineLocation = inputtedMineLocation;
             var checker = new Checker();
 
-            var isAtEdge = checker.IsAtBottomEdge(mineLocation, fieldWidth, fieldHeight);
+            var isAtEdge = checker.IsAtBottomEdge(mineLocation, fieldHeight);
 
             Assert.False(isAtEdge);
 
