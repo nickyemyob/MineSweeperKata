@@ -16,5 +16,10 @@
         {
             return mineLocation.Y == 0;
         }
+
+        public bool IsAtBottomEdge(MineCoordinate mineLocation, int fieldWidth, int fieldHeight)
+        {
+            return mineLocation.Y == fieldHeight;
+        }
     }
 }

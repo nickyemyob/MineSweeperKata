@@ -69,7 +69,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
 
             new object[]
             {
-                new MineCoordinate(0, 1),
+                new MineCoordinate(1, 0),
                 2,
                 2
             }
@@ -83,6 +83,36 @@ namespace MineSweeperKata.Spec.Unit_Tests
             var checker = new Checker();
 
             var isAtEdge = checker.IsAtTopEdge(mineLocation, fieldWidth, fieldHeight);
+
+            Assert.True(isAtEdge);
+
+        }
+
+        private static readonly object[] MinesAtBottomEdgeOfFieldScenarios =
+        {
+            new object[]
+            {
+                new MineCoordinate(0, 1),
+                2,
+                2
+            },
+
+            new object[]
+            {
+                new MineCoordinate(1, 1),
+                2,
+                2
+            }
+        };
+
+        [TestCaseSource(nameof(MinesAtBottomEdgeOfFieldScenarios))]
+        [Test]
+        public void ReturnTrueIfMineIsNextToTheBottomEdgeOfTheBoard(MineCoordinate inputtedMineLocation, int fieldWidth, int fieldHeight)
+        {
+            var mineLocation = inputtedMineLocation;
+            var checker = new Checker();
+
+            var isAtEdge = checker.IsAtBottomEdge(mineLocation, fieldWidth, fieldHeight);
 
             Assert.True(isAtEdge);
 
@@ -132,6 +162,19 @@ namespace MineSweeperKata.Spec.Unit_Tests
             var checker = new Checker();
 
             var isAtEdge = checker.IsAtTopEdge(mineLocation, fieldWidth, fieldHeight);
+
+            Assert.False(isAtEdge);
+
+        }
+
+        [TestCaseSource(nameof(MinesNotAtEdgeOfFieldScenarios))]
+        [Test]
+        public void ReturnFalseIfMineIsNotNextToTheBottomEdgeOfTheBoard(MineCoordinate inputtedMineLocation, int fieldWidth, int fieldHeight)
+        {
+            var mineLocation = inputtedMineLocation;
+            var checker = new Checker();
+
+            var isAtEdge = checker.IsAtBottomEdge(mineLocation, fieldWidth, fieldHeight);
 
             Assert.False(isAtEdge);
 
