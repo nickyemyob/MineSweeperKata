@@ -67,6 +67,8 @@
     <Compile Include="ShowMinesSteps.cs" />
     <Compile Include="Unit Tests\CheckerShould.cs" />
     <Compile Include="Unit Tests\InputFormatterShould.cs" />
+    <Compile Include="Unit Tests\MainSweeper.cs" />
+    <Compile Include="Unit Tests\MainSweeperShould.cs" />
     <Compile Include="Unit Tests\MetalDetectorShould.cs" />
   </ItemGroup>
   <ItemGroup>
