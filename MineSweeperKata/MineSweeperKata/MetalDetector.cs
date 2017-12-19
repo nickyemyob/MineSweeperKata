@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace MineSweeperKata
@@ -14,14 +15,14 @@ namespace MineSweeperKata
                    "1*\n";
         }
 
-        public IEnumerable GetMineLocations(IEnumerable<IEnumerable<char>> map)
+        public IEnumerable GetMineLocations(Field map)
         {
             var x = 0;
             var y = 0;
 
             var mineCoordinates = new List<MineCoordinate>();
 
-            foreach (var yMap in map)
+            foreach (var yMap in map.FieldLayout)
             {
                 foreach (var xMap in yMap)
                 {

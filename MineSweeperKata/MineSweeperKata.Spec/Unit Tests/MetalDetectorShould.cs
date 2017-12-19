@@ -54,34 +54,47 @@ namespace MineSweeperKata.Spec.Unit_Tests
         {
             new object[]
             {
-                new List<string>
+                new Field
                 {
-                    "..",
-                    ".*"
+                    Width = 2,
+                    Height = 2,
+                    FieldLayout =
+                        new List<string>
+                        {
+                            "..",
+                            ".*"
+                        }
                 },
                 new List<MineCoordinate>
                 {
                     new MineCoordinate(1, 1)
                 }
             },
+
             new object[]
             {
-                new List<string>
+                new Field
                 {
-                    "...",
-                    "...",
-                    "..*"
+                    Width = 3,
+                    Height = 3,
+                    FieldLayout =
+                        new List<string>
+                        {
+                            "...",
+                            "...",
+                            "..*"
+                        }
                 },
                 new List<MineCoordinate>
                 {
                     new MineCoordinate(2, 2)
                 }
-            }
+            },
         };
 
         [TestCaseSource(nameof(MapObjects))]
         [Test]
-        public void GetMineLocations(IEnumerable<IEnumerable<char>> map, IList<MineCoordinate> expectCoordinates)
+        public void GetMineLocations(Field map, IList<MineCoordinate> expectCoordinates)
         {
             var metalDetector = new MetalDetector();
 

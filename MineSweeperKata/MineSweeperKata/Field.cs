@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace MineSweeperKata
 {
@@ -6,6 +7,6 @@ namespace MineSweeperKata
     {
         public int Width { get; set; }
         public int Height { get; set; }
-        public IEnumerable FieldLayout { get; set; }
+        public IEnumerable<string> FieldLayout { get; set; }
     }
 }
