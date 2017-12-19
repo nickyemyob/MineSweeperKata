@@ -1,9 +1,11 @@
-﻿namespace MineSweeperKata
+﻿using System.Collections;
+
+namespace MineSweeperKata
 {
     public class Field
     {
         public int Width { get; set; }
         public int Height { get; set; }
-        public object FieldLayout { get; set; }
+        public IEnumerable FieldLayout { get; set; }
     }
 }

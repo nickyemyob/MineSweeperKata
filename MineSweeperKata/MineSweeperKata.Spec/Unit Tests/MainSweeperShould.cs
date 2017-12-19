@@ -25,7 +25,29 @@ namespace MineSweeperKata.Spec.Unit_Tests
                             ".*"
                         }
                 }
+            },
+            new object[]
+            {
+                "33\n" +
+                "...\n" +
+                "...\n" +
+                "..*\n",
+
+                new Field
+                {
+                    Width = 3,
+                    Height = 3,
+                    FieldLayout = 
+                    new List<string>
+                        {
+                            "...",
+                            "...",
+                            "..*"
+                        }
+                    
+                }
             }
+
         };
 
         [TestCaseSource(nameof(RawToExtractedDataObjects))]
@@ -35,7 +57,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
             var sweeper = new MainSweeper();
             var actualField = sweeper.Format(input);
 
-            Assert.AreEqual(expectedField.FieldLayout, actualField.FieldLayout);
+            CollectionAssert.AreEqual(expectedField.FieldLayout, actualField.FieldLayout);
             Assert.AreEqual(expectedField.Height, actualField.Height);
             Assert.AreEqual(expectedField.Width, actualField.Width);
 
