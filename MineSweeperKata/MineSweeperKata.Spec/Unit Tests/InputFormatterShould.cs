@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace MineSweeperKata.Spec.Unit_Tests
 {
     [TestFixture]
-    public class MainSweeperShould
+    public class InputFormatterShould
     {
         private static readonly object[] RawToExtractedDataObjects =
         {
@@ -54,8 +54,8 @@ namespace MineSweeperKata.Spec.Unit_Tests
         [Test]
         public void FormatInput(string input, Field expectedField)
         {
-            var sweeper = new MainSweeper();
-            var actualField = sweeper.Format(input);
+            var formatter = new InputFormatter();
+            var actualField = formatter.Format(input);
 
             CollectionAssert.AreEqual(expectedField.FieldLayout, actualField.FieldLayout);
             Assert.AreEqual(expectedField.Height, actualField.Height);

@@ -20,7 +20,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
         public void ReturnTrueIfMineIsNextToTheRightEdgeOfTheBoard(MineCoordinate inputtedMineLocation, int fieldWidth, int fieldHeight)
         {
             var mineLocation = inputtedMineLocation;
-            var checker = new Checker();
+            var checker = new MineAtEdgeOfFieldDetector();
 
             var isAtEdge = checker.IsAtRightEdge(mineLocation, fieldWidth);
 
@@ -50,7 +50,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
         public void ReturnTrueIfMineIsNextToTheLeftEdgeOfTheBoard(MineCoordinate inputtedMineLocation, int fieldWidth, int fieldHeight)
         {
             var mineLocation = inputtedMineLocation;
-            var checker = new Checker();
+            var checker = new MineAtEdgeOfFieldDetector();
 
             var isAtEdge = checker.IsAtLeftEdge(mineLocation);
 
@@ -80,7 +80,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
         public void ReturnTrueIfMineIsNextToTheTopEdgeOfTheBoard(MineCoordinate inputtedMineLocation, int fieldWidth, int fieldHeight)
         {
             var mineLocation = inputtedMineLocation;
-            var checker = new Checker();
+            var checker = new MineAtEdgeOfFieldDetector();
 
             var isAtEdge = checker.IsAtTopEdge(mineLocation);
 
@@ -110,7 +110,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
         public void ReturnTrueIfMineIsNextToTheBottomEdgeOfTheBoard(MineCoordinate inputtedMineLocation, int fieldWidth, int fieldHeight)
         {
             var mineLocation = inputtedMineLocation;
-            var checker = new Checker();
+            var checker = new MineAtEdgeOfFieldDetector();
 
             var isAtEdge = checker.IsAtBottomEdge(mineLocation, fieldHeight);
 
@@ -133,7 +133,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
         public void ReturnFalseIfMineIsNotNextToTheRightEdgeOfTheBoard(MineCoordinate inputtedMineLocation, int fieldWidth, int fieldHeight)
         {
             var mineLocation = inputtedMineLocation;
-            var checker = new Checker();
+            var checker = new MineAtEdgeOfFieldDetector();
 
             var isAtEdge = checker.IsAtRightEdge(mineLocation, fieldWidth);
 
@@ -146,7 +146,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
         public void ReturnFalseIfMineIsNotNextToTheLeftEdgeOfTheBoard(MineCoordinate inputtedMineLocation, int fieldWidth, int fieldHeight)
         {
             var mineLocation = inputtedMineLocation;
-            var checker = new Checker();
+            var checker = new MineAtEdgeOfFieldDetector();
 
             var isAtEdge = checker.IsAtLeftEdge(mineLocation);
 
@@ -159,7 +159,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
         public void ReturnFalseIfMineIsNotNextToTheTopEdgeOfTheBoard(MineCoordinate inputtedMineLocation, int fieldWidth, int fieldHeight)
         {
             var mineLocation = inputtedMineLocation;
-            var checker = new Checker();
+            var checker = new MineAtEdgeOfFieldDetector();
 
             var isAtEdge = checker.IsAtTopEdge(mineLocation);
 
@@ -172,7 +172,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
         public void ReturnFalseIfMineIsNotNextToTheBottomEdgeOfTheBoard(MineCoordinate inputtedMineLocation, int fieldWidth, int fieldHeight)
         {
             var mineLocation = inputtedMineLocation;
-            var checker = new Checker();
+            var checker = new MineAtEdgeOfFieldDetector();
 
             var isAtEdge = checker.IsAtBottomEdge(mineLocation, fieldHeight);
 

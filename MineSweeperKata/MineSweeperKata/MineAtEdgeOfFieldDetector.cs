@@ -1,6 +1,6 @@
 ﻿namespace MineSweeperKata
 {
-    public class Checker
+    public class MineAtEdgeOfFieldDetector
     {
         public bool IsAtRightEdge(MineCoordinate mineLocation, int fieldWidth)
         {

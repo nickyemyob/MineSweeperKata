@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace MineSweeperKata
 {
-    public class MainSweeper
+    public class InputFormatter
     {
         public Field Format(string input)
         {
