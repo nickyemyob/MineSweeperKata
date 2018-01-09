@@ -36,7 +36,6 @@ namespace MineSweeperKata.Spec.Unit_Tests
                 "22\n" +
                 "..\n" +
                 ".*\n" +
-                "00\n" +
                 "33\n" +
                 "...\n" +
                 "...\n" +
@@ -53,7 +52,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
         [Test]
         public void RunTheSweepAndProduceOutput(string input, string output)
         {
-            var sweeper = new MainSweeper();
+            var sweeper = new Sweeper();
             var actualOutput = sweeper.Sweep(input);
 
             Assert.AreEqual(output, actualOutput);

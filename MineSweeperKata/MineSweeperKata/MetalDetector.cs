@@ -8,12 +8,12 @@ namespace MineSweeperKata
     {
         private const char Mine = '*';
 
-        public string Sweep(string field)
-        {
-            return "Field #1:\n" +
-                   "11\n" +
-                   "1*\n";
-        }
+//        public string Sweep(string field)
+//        {
+//            return "Field #1:\n" +
+//                   "11\n" +
+//                   "1*\n";
+//        }
 
         public IEnumerable GetMineLocations(Field map)
         {
