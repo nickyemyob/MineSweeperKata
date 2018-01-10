@@ -29,19 +29,17 @@ namespace MineSweeperKata.Spec.Unit_Tests
                 {
                     list.Add(s);
                 }
-
             }
 
             return "Field #1:\n" +
                    "11\n" +
                    "1*\n";
-
         }
 
 
         private int CharToInt(char c)
         {
-            return (int)Char.GetNumericValue(c);
+            return (int) Char.GetNumericValue(c);
         }
     }
 }

@@ -3,7 +3,7 @@
 namespace MineSweeperKata.Spec.Unit_Tests
 {
     [TestFixture]
-    public class MainSweeperShould
+    public class SweeperShould
     {
         private static readonly object[] FieldAndSweepedFieldObjects =
         {
