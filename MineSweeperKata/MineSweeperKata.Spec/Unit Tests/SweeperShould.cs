@@ -45,7 +45,14 @@ namespace MineSweeperKata.Spec.Unit_Tests
                 "Field #1:\n" +
                 "000\n" +
                 "011\n" +
-                "01*\n"
+                "01*\n" +
+                "\n" +
+                "Field #2:\n" +
+                "000\n" +
+                "011\n" +
+                "01*\n" +
+                "00\n"
+
             }
         };
 

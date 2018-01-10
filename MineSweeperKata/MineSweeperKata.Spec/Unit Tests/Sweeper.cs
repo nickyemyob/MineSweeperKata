@@ -15,19 +15,19 @@ namespace MineSweeperKata.Spec.Unit_Tests
             var field = new Field();
             var list = new List<string>();
 
-            var counter = 0;
-            foreach (string s in split)
+            var counterX = 0;
+            var counterY = 0;
+            foreach (string boardElement in split)
             {
-                if (s.All(Char.IsDigit))
+                if (boardElement.All(Char.IsDigit))
                 {
-                    field.Height = CharToInt(s[0]);
-                    field.Width = CharToInt(s[1]);
-                    counter = 0;
-                    counter = CharToInt(s[1]);
+                    field.Height = CharToInt(boardElement[0]);
+                    field.Width = CharToInt(boardElement[1]);
+                    counterX = CharToInt(boardElement[1]);
                 }
                 else
                 {
-                    list.Add(s);
+                    list.Add(boardElement);
                 }
             }
 
