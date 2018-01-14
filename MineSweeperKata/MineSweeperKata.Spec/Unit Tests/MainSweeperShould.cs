@@ -38,12 +38,19 @@ namespace MineSweeperKata.Spec.Unit_Tests
                 "...\n" +
                 "...\n" +
                 "..*\n" +
+                "22\n" +
+                "..\n" +
+                ".*\n" +
                 "00",
 
                 "Field #1:\n" +
                 "000\n" +
                 "011\n" +
-                "01*\n"
+                "01*\n" +
+                "\n" +
+                "Field #2:\n" +
+                "11\n" +
+                "1*\n"
             }
         };
 
@@ -51,11 +58,10 @@ namespace MineSweeperKata.Spec.Unit_Tests
         [Test]
         public void RevealMineAndDetectNearbyMines(string inputField, string expectedField)
         {
-            var expectedOutput = expectedField;
             var mainSweeper = new MainSweeper();
-            var actualOutput = mainSweeper.Sweep();
+            var actualOutput = mainSweeper.Sweep(inputField);
 
-            Assert.AreEqual(expectedOutput, actualOutput);
+            Assert.AreEqual(expectedField, actualOutput);
         }
     }
 }

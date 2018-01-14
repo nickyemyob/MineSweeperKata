@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainSweeper.cs" />
     <Compile Include="MineAtEdgeOfFieldDetector.cs" />
     <Compile Include="Field.cs" />
     <Compile Include="MetalDetector.cs" />
