@@ -4,22 +4,6 @@ namespace MineSweeperKata.Spec.Unit_Tests
 {
     public class MainSweeperShould
     {
-        //        [TestCaseSource(nameof(FieldAndSweepedFieldObjects))]
-        //        [Ignore("top test")]
-        //        [Test]
-        //        public void RevealMineAndDetectNearbyMines(string inputField, string expectedField)
-        //        {
-        //            var field = inputField;
-        //
-        //            var expected = expectedField;
-        //
-        //            var metalDetector = new MetalDetector();
-        //
-        //            var actual = metalDetector.Sweep(field);
-        //
-        //            Assert.AreEqual(expected, actual);
-        //        }
-
         private static readonly object[] UserInputAndOutputScenarios =
         {
             new object[]
@@ -65,9 +49,9 @@ namespace MineSweeperKata.Spec.Unit_Tests
 
         [TestCaseSource(nameof(UserInputAndOutputScenarios))]
         [Test]
-        public void RevealMineAndDetectNearbyMines(string inputField, string ExpectedField)
+        public void RevealMineAndDetectNearbyMines(string inputField, string expectedField)
         {
-            var expectedOutput = ExpectedField;
+            var expectedOutput = expectedField;
             var mainSweeper = new MainSweeper();
             var actualOutput = mainSweeper.Sweep();
 
