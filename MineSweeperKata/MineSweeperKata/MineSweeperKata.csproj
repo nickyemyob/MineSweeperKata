@@ -40,12 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainSweeper.cs" />
     <Compile Include="MineAtEdgeOfFieldDetector.cs" />
     <Compile Include="Field.cs" />
-    <Compile Include="InputFormatter.cs" />
     <Compile Include="MetalDetector.cs" />
     <Compile Include="MineCoordinate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringToFieldFormatter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
