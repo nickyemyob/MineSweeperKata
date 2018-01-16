@@ -19,7 +19,7 @@ namespace MineSweeperKata.Spec.Unit_Tests
 //
 //            var metalDetector = new MetalDetector();
 //
-//            var actual = metalDetector.Sweep(field);
+//            var actual = metalDetector.SweepField(field);
 //
 //            Assert.AreEqual(expected, actual);
 //        }

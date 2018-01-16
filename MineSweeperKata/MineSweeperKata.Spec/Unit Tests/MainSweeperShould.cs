@@ -56,10 +56,11 @@ namespace MineSweeperKata.Spec.Unit_Tests
 
         [TestCaseSource(nameof(UserInputAndOutputScenarios))]
         [Test]
+        [Ignore("first test")]
         public void RevealMineAndDetectNearbyMines(string inputField, string expectedField)
         {
             var mainSweeper = new MainSweeper();
-            var actualOutput = mainSweeper.Sweep(inputField);
+            var actualOutput = mainSweeper.SweepField(inputField);
 
             Assert.AreEqual(expectedField, actualOutput);
         }

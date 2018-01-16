@@ -8,7 +8,7 @@ namespace MineSweeperKata
     {
         private const char Mine = '*';
 
-        public IEnumerable GetMineLocations(Field map)
+        public IList<MineCoordinate> GetMineLocations(Field map)
         {
             var x = 0;
             var y = 0;
