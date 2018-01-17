@@ -6,6 +6,7 @@ namespace MineSweeperKata
 {
     public class MainSweeper
     {
+        private readonly MineSense _mineSense = new MineSense();
         private const string EndOfInput = "00";
         private const char Mine = '*';
 
@@ -13,12 +14,8 @@ namespace MineSweeperKata
         {
             var fields = ConvertInputToFields(inputField);
 
-            //add logic that produces output here
-            var output = ConvertFieldsToOutput(fields);
+            return ConvertFieldsToOutput(fields);
 
-            return "Field #1:\n" +
-                   "11\n" +
-                   "1*\n";
         }
 
         private List<Field> ConvertInputToFields(string inputField)
@@ -70,13 +67,11 @@ namespace MineSweeperKata
             {
                 var fieldNumber = 1;
                 var metalDetector = new MetalDetector();
-
-                //TODO: ADD LOGIC FOR DETERMINING WHAT NUMBERs ARE INCREASED BECAUSE OF THE MINE
+                output = output + $"Field #{fieldNumber}\n";
 
                 var mineLocations = metalDetector.GetMineLocations(field);
                 var initalOutput = new String('0', field.Width);
                 var outputList = Enumerable.Repeat(initalOutput, field.Height).ToList();
-                var mineEdgeDetector = new MineAtEdgeOfFieldDetector();
 
                 foreach (var mineCoordinate in mineLocations)
                 {
@@ -84,13 +79,23 @@ namespace MineSweeperKata
                     row[mineCoordinate.X] = Mine;
                     outputList[mineCoordinate.Y] = row.ToString();
 
-                    if (!mineEdgeDetector.IsAtRightEdge(mineCoordinate, field.Width))
-                    {
-                        //TODO: ADD NUMBERS ARROUND MINES
-                    }
+
+                    //TODO: ADD NUMBERS ARROUND MINES
+                    outputList = _mineSense.SetValueOnTopOfMine(outputList, mineCoordinate);
+//                    outputList = SetValueOnTopRightOfMine(outputList, mineCoordinate);
+//                    outputList = SetValueOnRightOfMine(outputList, mineCoordinate);
+//                    outputList = SetValueOnBottomRightOfMine(outputList, mineCoordinate);
+//                    outputList = SetValueOnBottomOfMine(outputList, mineCoordinate);
+//                    outputList = SetValueOnBottomLeftOfMine(outputList, mineCoordinate);
+                    outputList = _mineSense.SetValueOnLeftOfMine(outputList, mineCoordinate);
+                    outputList = _mineSense.SetValueOnTopLeftOfMine(outputList, mineCoordinate);
+
                 }
 
-                output = output + $"Field #{fieldNumber}";
+                foreach (var fieldOutput in outputList)
+                {
+                    output = output + fieldOutput + "\n";
+                }
                     
             }
 

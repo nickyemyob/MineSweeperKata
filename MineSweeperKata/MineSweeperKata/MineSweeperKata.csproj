@@ -45,6 +45,7 @@
     <Compile Include="Field.cs" />
     <Compile Include="MetalDetector.cs" />
     <Compile Include="MineCoordinate.cs" />
+    <Compile Include="MineSense.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringToFieldFormatter.cs" />
   </ItemGroup>
